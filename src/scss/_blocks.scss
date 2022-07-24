@@ -164,7 +164,7 @@
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 480px;
   margin-inline: auto;
   img {
     object-fit: cover;
@@ -341,8 +341,8 @@
     margin-inline: 2rem 1.3rem;
     margin-bottom: 0.5rem;
     padding-inline: 0;
-    max-width: 30rem;
-    flex: 2;
+    width: clamp(18.75rem, calc(-3.7500rem + 37.5000vw), 30rem);
+    // flex: 2;
     img {
       margin-inline-start: auto;
     }
@@ -358,7 +358,7 @@
     padding-inline: 0;
     margin-bottom: clamp(3rem, calc(-4.5000rem + 12.5000vw), 6.75rem);
     h1 {
-      margin-bottom: 3rem;
+      margin-bottom: clamp(1rem, calc(-3.0000rem + 6.6667vw), 3rem);
       letter-spacing: var(--ls-h1);
     }
     p {
