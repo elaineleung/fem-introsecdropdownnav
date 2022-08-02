@@ -10,12 +10,11 @@ function Menu() {
   return (
     <div className="menu fs-menu">
       <MenuToggle openMenu={openMenu} setOpenMenu={setOpenMenu} />
-      <div className="menu__overlay">
-        <div className="menu__inner">
-          <Nav openMenu={openMenu} setOpenMenu={setOpenMenu} />
-          <Login />
-        </div>
-      </div>
+      <div className="menu__overlay"></div>
+      <div className="menu__inner">
+        <Nav openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        <Login />
+      </div> 
     </div>
   );
 }

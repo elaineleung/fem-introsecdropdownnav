@@ -133,13 +133,15 @@
   transition: none;
 }
 
-[aria-pressed="false"] + .menu__overlay > .menu__inner {
+[aria-pressed="false"] ~ .menu__inner {
   transform: translateX(100%);
 }
 
 [aria-pressed="false"].menu__icon {
-  position: relative;
-  top: 0.05rem;
+  position: fixed;
+  top: 1.5rem;
+  right: 1rem;
+  z-index: 10;
 }
 
 [aria-pressed="true"] + .menu__overlay {
@@ -150,7 +152,7 @@
 }
 
 @media (min-width: 960px) {
-  [aria-pressed="false"] + .menu__overlay > .menu__inner {
+  [aria-pressed="false"] + .menu__overlay ~ .menu__inner {
     transform: translateX(0);
   }
   [aria-pressed="false"] + .menu__overlay {

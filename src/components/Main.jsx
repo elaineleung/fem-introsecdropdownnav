@@ -1,12 +1,14 @@
-import Hero from "./Hero"
-import Landing from "./Landing"
+import Hero from "./Hero";
+import Landing from "./Landing";
 
-function Main(){
-  return(
+function Main() {
+  return (
     <main className="main max-main wrapper pad-main">
-      <Hero />
-      <Landing />
+      <div className="main__inner">
+        <Hero />
+        <Landing />
+      </div>
     </main>
-  )
+  );
 }
-export default Main
+export default Main;

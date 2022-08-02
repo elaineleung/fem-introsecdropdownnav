@@ -1,8 +1,24 @@
-.container {
+.body {
+  flex-grow: 1;
+  min-height: 100vh;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  flex: 1;
-  min-height: calc(100vh - 59.6px);
+  text-align: center;
+  line-height: var(--lh-body);
+  font-size: var(--fs-body);
+  // justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0;
+  // min-height: calc(100vh - 59.6px);
+  > * {
+    width: 100%;
+  }
 }
 
 .logo {
@@ -27,19 +43,22 @@
   position: relative;
   line-height: var(--lh-nav);
   &__icon {
-    width: 2rem;
-    background-color: transparent;
-    align-self: flex-end;
-    z-index: 5;
     position: fixed;
+    background-color: transparent;
+    // align-self: flex-end;
+    z-index: 10;
     top: 1.25rem;
+    right: 1.25rem;
   }
   &__overlay {
     position: fixed;
+    top: 0;
     right: 0;
-    top: -20rem;
-    height: 200vh;
-    width: 200vh;
+    width: 3rem;
+    height: 2rem;
+    // top: -20rem;
+    min-height: 100vh;
+    min-width: 100vw;
     z-index: -1;
     opacity: 0;
     background-color: var(--clr-overlay);
@@ -154,9 +173,12 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 2.9rem;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2.9rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .hero {
@@ -172,13 +194,16 @@
 }
 
 .landing {
+  display: flex;
+  flex-direction: column;
   margin-inline: auto;
+  max-width: 40rem;
+  padding-inline: 0.75rem;
 }
 
 .intro {
+  margin-inline: auto;
   margin-bottom: 3rem;
-  max-width: 40rem;
-  padding-inline: 0.75rem;
   letter-spacing: var(--ls-intro);
   &__content {
     h1 {
@@ -195,21 +220,18 @@
 .clients {
   display: flex;
   align-items: center;
-  padding-inline: 1rem;
   gap: 1.8rem;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .footer {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
+  margin-top: auto;
   &__content {
-    flex: 1;
-    justify-self: flex-end;
-    margin-inline: auto;
+    margin-top: auto;
   }
   .block-footer {
     display: block;
@@ -254,19 +276,11 @@
       transform: translateX(0%);
     }
     &__overlay {
-      position: initial;
-      display: flex;
-      flex-direction: column;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      z-index: 10;
-      background-color: none;
+      display: none;
     }
   }
   .nav {
     margin-inline: 0;
-    // padding-top: 0.5rem;
     &__inner {
       align-items: center;
     }
@@ -329,11 +343,18 @@
     }
   }
   .main {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: clamp(1.8rem, calc(-2.6000rem + 7.3333vw), 4rem);
-    margin-bottom: 5rem;
-    align-items: flex-end;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: min(95%, 81rem);
+    &__inner {
+      flex: 1;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: clamp(1.8rem, calc(-2.6000rem + 7.3333vw), 4rem);
+      // margin-bottom: min(8vh, 4rem);
+      align-items: flex-end;
+    }
   }
 
   .hero {
@@ -341,7 +362,8 @@
     margin-inline: 2rem 1.3rem;
     margin-bottom: 0.5rem;
     padding-inline: 0;
-    width: clamp(18.75rem, calc(-3.7500rem + 37.5000vw), 30rem);
+    width: min(40%, 30rem);
+    // width: clamp(18.75rem, calc(-3.7500rem + 37.5000vw), 30rem);
     // flex: 2;
     img {
       margin-inline-start: auto;

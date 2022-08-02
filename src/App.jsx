@@ -5,7 +5,7 @@ import Main from "./components/Main";
 
 function App() {
   return (
-    <div className="fs-body font-primary bg-white clr-neutral-500">
+    <div className="body / fs-body font-primary bg-white clr-neutral-500">
       <div className="container">
         <Header />
         <Main />
